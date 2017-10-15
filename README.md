@@ -1,2 +1,2 @@
 # Joydeep Banerjee
-SAP ABAP Consultant
+Software Engineer
