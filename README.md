@@ -1,2 +1,2 @@
 # Joydeep Banerjee
-Software Engineer
+Business Analyst
