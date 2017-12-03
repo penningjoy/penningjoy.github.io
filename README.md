@@ -1,2 +1,2 @@
 # Joydeep Banerjee
-Business Analyst
+IT Business Analyst
