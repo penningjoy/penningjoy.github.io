@@ -1,2 +1,2 @@
 # Joydeep Banerjee
-IT Business Analyst
+Software Consultant/Project Manager
