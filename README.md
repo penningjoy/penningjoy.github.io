@@ -1,3 +1,3 @@
 # Joydeep Banerjee
-Software Consultant/Project Manager
+Software Solution Architect
 [Official Website](https://penningjoy.github.io)
