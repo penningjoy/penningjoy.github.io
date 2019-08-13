@@ -1,3 +1,3 @@
 # Joydeep Banerjee
-Software Solution Architect
+Software Engineer
 [Official Website](https://penningjoy.github.io)
