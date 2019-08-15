@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "Object Oriented Programming- Coupling Design: Communication between classes using Interface API "
+date:   2019-08-15 13:38:36 -0400
+Author: "Joydeep Banerjee"
+categories: Basics
+permalink: /:categories/:title
+---
+The fundamentals of good solution design in Object Oriented Programming is about maintaining decoupled components which can be reused without friction. Strongly coupled component structure can defeat the principle of encapsulation and also lead to overwork. A dependent component can break because of functional changes made in the parent component. On the other hand, a loosely coupled solution can strictly enforce the principle of encapsulation and increase reuse of components. 
+
+Below is a simple example to demonstrate a loosely coupled solution. The Class Writer is being accessed using the interface writerDetails and the class Book is accessed using the interface bookDetails. The classes are communicating using their interfaces as APIs.
+
+{% highlight Java %}
+import java.io.IOException;
+
+interface writerDetails {
+    public String  writerDet();
+}
+
+interface bookDetails {
+    public String  bookDet();
+}
+
+
+class Book implements bookDetails {
+    String book;
+    public Book(String book)
+    {
+        this.book = book;
+    }
+    @Override
+    public String bookDet(){
+        return this.book;
+    }
+}
+class Writer implements writerDetails{
+    String writer;
+    public Writer(String writer)
+    {
+        this.writer = writer;
+    }
+    @Override
+    public String writerDet() {
+        return this.writer;
+    }
+}
+
+class Main {
+    public static void main(String[] args) throws IOException{
+        Book book = new Book("Java");
+        Writer writer = new Writer("James Gosling");
+        aboutTheBook(book, writer);
+    }
+    //classes can be accessed now using their implemented interfaces
+    public static void aboutTheBook(bookDetails book, writerDetails writer) throws IOException {
+        System.out.println(book.bookDet() + " is written by : " + writer.writerDet());
+    }
+}
+
+#=> prints 'Java is written by : James Gosling' to STDOUT.
+{% endhighlight %}
+
+
+

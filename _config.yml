@@ -19,10 +19,10 @@ author: Joydeep Banerjee
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://penningjoy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  
+github_username: penningjoy 
 
 # Build settings
-#markdown: kramdown
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
@@ -41,7 +41,7 @@ plugins:
 #   - vendor/ruby/
 social_links:
     twitter: penningjoy
-    github:  penningjoy
+    github: penningjoy
     rss: rss
 
 minima:
