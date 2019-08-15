@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Object Oriented Programming- Coupling Design: Communication between classes using Interface API "
+title:  "Object Oriented Programming- Pattern Coupling: Communication between classes using Interface API "
 date:   2019-08-15 13:38:36 -0400
 Author: "Joydeep Banerjee"
 categories: Basics
