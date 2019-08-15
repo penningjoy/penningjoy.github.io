@@ -3,7 +3,7 @@ layout: post
 title:  "Object Oriented Programming- Pattern Coupling: Communication between classes using Interface API "
 date:   2019-08-15 13:38:36 -0400
 Author: "Joydeep Banerjee"
-categories: Basics
+categories: Design Patterns
 permalink: /:categories/:title
 ---
 The fundamentals of good solution design in Object Oriented Programming is about maintaining decoupled components which can be reused without friction. Strongly coupled component structure can defeat the principle of encapsulation and also lead to overwork. A dependent component can break because of functional changes made in the parent component. On the other hand, a loosely coupled solution can strictly enforce the principle of encapsulation and increase reuse of components. 
