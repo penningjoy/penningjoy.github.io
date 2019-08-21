@@ -6,7 +6,7 @@ Author: "Joydeep Banerjee"
 categories: Design Patterns
 permalink: /:categories/:title
 ---
-The fundamentals of good solution design in Object Oriented Programming is about maintaining decoupled components which can be reused without friction. Strongly coupled component structure can defeat the principle of encapsulation and also lead to overwork. A dependent component can break because of functional changes made in the parent component. On the other hand, a loosely coupled solution can strictly enforce the principle of encapsulation and increase reuse of components. 
+The fundamentals of good solution design in Object Oriented Programming is much about maintaining decoupled components which can be reused without friction. Strongly coupled component structure can defeat the principle of encapsulation and also lead to overwork. A dependent component can break because of functional changes made in the parent component. On the other hand, a loosely coupled solution can strictly enforce the principle of encapsulation and increase reuse of components. 
 
 Below is a simple example to demonstrate a loosely coupled solution. The Class Writer is being accessed using the interface writerDetails and the class Book is accessed using the interface bookDetails. The classes are communicating using their interfaces as APIs.
 
