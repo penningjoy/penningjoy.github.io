@@ -1,3 +1,2 @@
 # Joydeep Banerjee
-Software Engineer
-[Official Website](https://penningjoy.github.io)
+## Senior Software Engineer || Technical Product Manager
