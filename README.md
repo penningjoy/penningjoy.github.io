@@ -1,2 +1,2 @@
 # Joydeep Banerjee
-## Software Engineer || Technical Product Manager || Technology Evangelist
+## Program Manager | Product Manager | Software Engineer
