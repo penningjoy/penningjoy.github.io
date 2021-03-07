@@ -1,4 +1,4 @@
 # Joydeep Banerjee
-##### Program Manager | Product Manager | Software Engineer
+##### Software Engineering Manager | Technical Lead | Senior Software Engineer
 
 ##### Visit the website [ Joydeep Banerjee ](https://penningjoy.github.io/) .
