@@ -3,8 +3,9 @@
 ---
 <header>
   <div class="wrap bar">
-    <a class="mark" href="/">Joydeep Banerjee</a>
-    <nav>
+    <a class="mark" href="/"><span class="dot"></span>Joydeep Banerjee</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">Menu</button>
+    <nav id="site-nav" data-open="false">
       <ul>
         <li><a href="/#work">Work</a></li>
         <li><a href="/writing">Writing</a></li>
@@ -15,3 +16,22 @@
     </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    const setOpen = (open: boolean) => {
+      nav.dataset.open = String(open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+    };
+    toggle.addEventListener('click', () =>
+      setOpen(nav.dataset.open !== 'true')
+    );
+    // Close after choosing a destination.
+    nav.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => setOpen(false))
+    );
+  }
+</script>

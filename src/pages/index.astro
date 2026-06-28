@@ -8,71 +8,87 @@ const posts = (await getCollection('writing', ({ data }) => !data.draft))
   .slice(0, 3);
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+
+// Selected work, with the real stack surfaced as chips so the section
+// rewards a closer look even before screenshots exist.
+const work = [
+  {
+    title: 'BhriguOne',
+    body: 'Building an open-source path for RL with verifiable rewards, aimed at real-world agents that need to run beyond the lab.',
+    year: 'Now',
+    live: true,
+    tags: ['Reinforcement Learning', 'Verifiable Rewards', 'Open Source'],
+  },
+  {
+    title: 'Industrial AI at Bhrigu',
+    body: 'Owns a full-stack architecture spanning Go edge runtime, Python/ONNX inference, Kotlin services, NATS JetStream sync, and React.',
+    year: '2025',
+    tags: ['Go', 'Python · ONNX', 'Kotlin', 'NATS JetStream', 'React'],
+  },
+  {
+    title: 'Software Products at E Tech Group',
+    body: 'Led product development across pre-sales, customer onboarding, feature architecture, backlog strategy, and full-stack delivery.',
+    year: '2021–25',
+    tags: ['Product', 'Architecture', 'Full-stack'],
+  },
+  {
+    title: 'AI and Engineering at Data-Core',
+    body: 'Managed a 10-person engineering team delivering ML systems, web apps, APIs, data pipelines, and AI chatbots for enterprise clients.',
+    year: '2018–21',
+    tags: ['ML Systems', 'Data Pipelines', 'Team of 10'],
+  },
+];
 ---
 <Base title="Joydeep Banerjee — Industrial AI Product Builder">
 
   <!-- ─── Hero ─── -->
   <section class="hero wrap">
-    <span class="label">Product · Industrial AI · Distributed Systems</span>
-    <h1>I build products.</h1>
-    <p class="lede">
+    <div class="eyebrow reveal">
+      <span class="label">Product</span>
+      <span class="sep"></span>
+      <span class="label">Industrial AI</span>
+      <span class="sep"></span>
+      <span class="label">Distributed Systems</span>
+    </div>
+    <h1 class="reveal" style="transition-delay:.06s">I build products.</h1>
+    <p class="lede reveal" style="transition-delay:.12s">
       I have spent 15 years at the intersection of software engineering and
       industrial intelligence, building systems that learn, adapt, and operate
       on constrained, regulated, and air-gapped infrastructure.
     </p>
-    <div class="meta">
+    <div class="meta reveal" style="transition-delay:.18s">
       <span class="label">Product Engineering</span>
       <span class="label">Machine Learning</span>
       <span class="label">Edge AI</span>
       <span class="label">Distributed Systems</span>
-
     </div>
   </section>
 
   <!-- ─── Work ─── -->
-  <section id="work" class="wrap">
+  <section id="work" class="wrap reveal">
     <div class="head">
       <span class="no">01</span>
       <h2>Selected work</h2>
     </div>
     <div class="work">
-      <article class="item">
-        <span class="idx">01</span>
-        <div>
-          <h3>BhriguOne</h3>
-          <p>Building an open-source path for RL with verifiable rewards, aimed at real-world agents that need to run beyond the lab.</p>
-        </div>
-        <span class="year">Now</span>
-      </article>
-      <article class="item">
-        <span class="idx">02</span>
-        <div>
-          <h3>Industrial AI at Bhrigu</h3>
-          <p>Owns a full-stack architecture spanning Go edge runtime, Python/ONNX inference, Kotlin services, NATS JetStream sync, and React.</p>
-        </div>
-        <span class="year">2025</span>
-      </article>
-      <article class="item">
-        <span class="idx">03</span>
-        <div>
-          <h3>Software Products at E Tech Group</h3>
-          <p>Led product development across pre-sales, customer onboarding, feature architecture, backlog strategy, and full-stack delivery.</p>
-        </div>
-        <span class="year">2021-25</span>
-      </article>
-      <article class="item">
-        <span class="idx">04</span>
-        <div>
-          <h3>AI and Engineering at Data-Core</h3>
-          <p>Managed a 10-person engineering team delivering ML systems, web apps, APIs, data pipelines, and AI chatbots for enterprise clients.</p>
-        </div>
-        <span class="year">2018-21</span>
-      </article>
+      {work.map((w, i) => (
+        <article class="item">
+          <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{w.title}</h3>
+            <p>{w.body}</p>
+            <div class="chips">
+              {w.tags.map((t) => <span class="chip">{t}</span>)}
+            </div>
+          </div>
+          <span class={`year${w.live ? ' live' : ''}`}>{w.year}</span>
+        </article>
+      ))}
     </div>
   </section>
 
   <!-- ─── Approach ─── -->
-  <section id="approach" class="wrap">
+  <section id="approach" class="wrap reveal">
     <div class="head">
       <span class="no">02</span>
       <h2>How I build</h2>
@@ -103,7 +119,7 @@ const fmt = (d: Date) =>
 
   <!-- ─── Writing (latest) ─── -->
   {posts.length > 0 && (
-    <section id="latest" class="wrap">
+    <section id="latest" class="wrap reveal">
       <div class="head">
         <span class="no">03</span>
         <h2>Writing</h2>
@@ -113,7 +129,7 @@ const fmt = (d: Date) =>
           <a class="item" href={`/writing/${post.id}`}>
             <span class="idx">→</span>
             <div>
-              <h3>{post.data.title}</h3>
+              <h3>{post.data.title}<span class="arrow">→</span></h3>
               <p>{post.data.description}</p>
             </div>
             <span class="year">{fmt(post.data.date)}</span>
@@ -125,7 +141,7 @@ const fmt = (d: Date) =>
   )}
 
   <!-- ─── About ─── -->
-  <section id="about" class="wrap">
+  <section id="about" class="wrap reveal">
     <div class="head">
       <span class="no">04</span>
       <h2>About</h2>
