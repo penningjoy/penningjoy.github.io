@@ -9,23 +9,22 @@ const posts = (await getCollection('writing', ({ data }) => !data.draft))
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 ---
-<Base title="Joydeep Banerjee — Product Builder">
+<Base title="Joydeep Banerjee — Industrial AI Product Builder">
 
   <!-- ─── Hero ─── -->
   <section class="hero wrap">
-    <span class="label">Product Builder</span>
-    <!-- [EDIT] your one-line thesis -->
-    <h1>I build products people quietly fall in love with.</h1>
+    <span class="label">Industrial AI · Edge ML</span>
+    <h1>I build AI systems for the places reliability is not optional.</h1>
     <p class="lede">
-      Design first — then made real with AI and engineering. I care most about
-      the things you can't quite point to: how it feels, how little it asks of you,
-      how right it seems the moment you use it.
+      I have spent 15 years at the intersection of software engineering and
+      industrial intelligence, building systems that learn, adapt, and operate
+      on constrained, regulated, and air-gapped infrastructure.
     </p>
     <div class="meta">
-      <span class="label">Design</span>
-      <span class="label">AI</span>
-      <span class="label">Engineering</span>
-      <span class="label">Available 2026</span>
+      <span class="label">Reinforcement Learning</span>
+      <span class="label">Edge AI</span>
+      <span class="label">Product Engineering</span>
+      <span class="label">Greater Philadelphia</span>
     </div>
   </section>
 
@@ -36,30 +35,37 @@ const fmt = (d: Date) =>
       <h2>Selected work</h2>
     </div>
     <div class="work">
-      <!-- [EDIT] replace each item with a real product -->
       <article class="item">
         <span class="idx">01</span>
         <div>
-          <h3>Product name</h3>
-          <p>One honest sentence about what it does and why it mattered. The result, not the resume.</p>
+          <h3>BhriguOne</h3>
+          <p>Building an open-source path for RL with verifiable rewards, aimed at real-world agents that need to run beyond the lab.</p>
         </div>
-        <span class="year">2025</span>
+        <span class="year">Now</span>
       </article>
       <article class="item">
         <span class="idx">02</span>
         <div>
-          <h3>Product name</h3>
-          <p>One honest sentence about what it does and why it mattered. The result, not the resume.</p>
+          <h3>Industrial AI at Bhrigu</h3>
+          <p>Owns a full-stack architecture spanning Go edge runtime, Python/ONNX inference, Kotlin services, NATS JetStream sync, and React.</p>
         </div>
-        <span class="year">2024</span>
+        <span class="year">2025</span>
       </article>
       <article class="item">
         <span class="idx">03</span>
         <div>
-          <h3>Product name</h3>
-          <p>One honest sentence about what it does and why it mattered. The result, not the resume.</p>
+          <h3>Software Products at E Tech Group</h3>
+          <p>Led product development across pre-sales, customer onboarding, feature architecture, backlog strategy, and full-stack delivery.</p>
         </div>
-        <span class="year">2023</span>
+        <span class="year">2021-25</span>
+      </article>
+      <article class="item">
+        <span class="idx">04</span>
+        <div>
+          <h3>AI and Engineering at Data-Core</h3>
+          <p>Managed a 10-person engineering team delivering ML systems, web apps, APIs, data pipelines, and AI chatbots for enterprise clients.</p>
+        </div>
+        <span class="year">2018-21</span>
       </article>
     </div>
   </section>
@@ -73,23 +79,23 @@ const fmt = (d: Date) =>
     <div class="tenets">
       <div class="tenet">
         <span class="n">i</span>
-        <h3>Design is the product</h3>
-        <p>Not a coat of paint applied at the end. The decisions about how it feels are made first, and everything else serves them.</p>
+        <h3>Start with the operating reality</h3>
+        <p>Industrial AI has to fit the factory floor, the network boundary, the validation process, and the people responsible when it fails.</p>
       </div>
       <div class="tenet">
         <span class="n">ii</span>
-        <h3>Less, but better</h3>
-        <p>Every feature earns its place or leaves. The hardest, most valuable work is deciding what not to build.</p>
+        <h3>Choose the right layer</h3>
+        <p>Go for edge runtimes, Python and ONNX for inference, Kotlin for services, TypeScript for interfaces: each layer earns its tool.</p>
       </div>
       <div class="tenet">
         <span class="n">iii</span>
-        <h3>AI as material</h3>
-        <p>Not a gimmick to announce — a material to shape, used only where it makes the product more lovable and less work to use.</p>
+        <h3>Ship where compute is limited</h3>
+        <p>The work is not just model quality. It is latency, observability, offline behavior, sync, deployment, and graceful recovery.</p>
       </div>
       <div class="tenet">
         <span class="n">iv</span>
-        <h3>Care you can't see</h3>
-        <p>The empty states, the copy, the millisecond of a transition. Quality lives in the parts no one is asked to admire.</p>
+        <h3>Bridge research and deployment</h3>
+        <p>I care about the distance between promising papers and production systems, especially for RL agents and regulated AI workflows.</p>
       </div>
     </div>
   </section>
@@ -126,14 +132,13 @@ const fmt = (d: Date) =>
     <div class="about">
       <span class="no"></span>
       <div class="body">
-        <!-- [EDIT] your story -->
-        <p><strong>I'm a product builder.</strong> I start from how something should feel,
-        then use whatever it takes — design, AI, code — to make that feeling real and shippable.</p>
-        <p>I believe the best products disappear. They don't demand attention; they earn trust.
-        They're honest about what they are, restrained in what they ask, and thorough in the
-        details you only notice when they're missing.</p>
-        <p>I'm building toward a body of work that speaks for itself — products people don't just
-        use, but quietly love.</p>
+        <p><strong>I'm a product and engineering leader focused on applied AI.</strong>
+        My work sits where software engineering, machine learning, and industrial operations meet.</p>
+        <p>At Bhrigu, I lead full-stack technical work across edge systems, inference pipelines,
+        mobile and backend services, cloud sync, and frontend product surfaces. Before that, I led
+        software product development at E Tech Group and managed product engineering at Data-Core.</p>
+        <p>I write and build around reinforcement learning for real-world agents, edge AI on
+        constrained hardware, and NLP/AI for high-stakes environments like pharma and life sciences.</p>
       </div>
     </div>
   </section>
