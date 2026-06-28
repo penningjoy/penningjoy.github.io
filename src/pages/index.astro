@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// Pull the three most recent posts to surface on the home page.
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+---
+<Base title="Joydeep Banerjee — Product Builder">
+
+  <!-- ─── Hero ─── -->
+  <section class="hero wrap">
+    <span class="label">Product Builder</span>
+    <!-- [EDIT] your one-line thesis -->
+    <h1>I build products people quietly fall in love with.</h1>
+    <p class="lede">
+      Design first — then made real with AI and engineering. I care most about
+      the things you can't quite point to: how it feels, how little it asks of you,
+      how right it seems the moment you use it.
+    </p>
+    <div class="meta">
+      <span class="label">Design</span>
+      <span class="label">AI</span>
+      <span class="label">Engineering</span>
+      <span class="label">Available 2026</span>
+    </div>
+  </section>
+
+  <!-- ─── Work ─── -->
+  <section id="work" class="wrap">
+    <div class="head">
+      <span class="no">01</span>
+      <h2>Selected work</h2>
+    </div>
+    <div class="work">
+      <!-- [EDIT] replace each item with a real product -->
+      <article class="item">
+        <span class="idx">01</span>
+        <div>
+          <h3>Product name</h3>
+          <p>One honest sentence about what it does and why it mattered. The result, not the resume.</p>
+        </div>
+        <span class="year">2025</span>
+      </article>
+      <article class="item">
+        <span class="idx">02</span>
+        <div>
+          <h3>Product name</h3>
+          <p>One honest sentence about what it does and why it mattered. The result, not the resume.</p>
+        </div>
+        <span class="year">2024</span>
+      </article>
+      <article class="item">
+        <span class="idx">03</span>
+        <div>
+          <h3>Product name</h3>
+          <p>One honest sentence about what it does and why it mattered. The result, not the resume.</p>
+        </div>
+        <span class="year">2023</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── Approach ─── -->
+  <section id="approach" class="wrap">
+    <div class="head">
+      <span class="no">02</span>
+      <h2>How I build</h2>
+    </div>
+    <div class="tenets">
+      <div class="tenet">
+        <span class="n">i</span>
+        <h3>Design is the product</h3>
+        <p>Not a coat of paint applied at the end. The decisions about how it feels are made first, and everything else serves them.</p>
+      </div>
+      <div class="tenet">
+        <span class="n">ii</span>
+        <h3>Less, but better</h3>
+        <p>Every feature earns its place or leaves. The hardest, most valuable work is deciding what not to build.</p>
+      </div>
+      <div class="tenet">
+        <span class="n">iii</span>
+        <h3>AI as material</h3>
+        <p>Not a gimmick to announce — a material to shape, used only where it makes the product more lovable and less work to use.</p>
+      </div>
+      <div class="tenet">
+        <span class="n">iv</span>
+        <h3>Care you can't see</h3>
+        <p>The empty states, the copy, the millisecond of a transition. Quality lives in the parts no one is asked to admire.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Writing (latest) ─── -->
+  {posts.length > 0 && (
+    <section id="latest" class="wrap">
+      <div class="head">
+        <span class="no">03</span>
+        <h2>Writing</h2>
+      </div>
+      <div class="work">
+        {posts.map((post) => (
+          <a class="item" href={`/writing/${post.id}`}>
+            <span class="idx">→</span>
+            <div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </div>
+            <span class="year">{fmt(post.data.date)}</span>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top:1.5rem"><a href="/writing" class="label" style="color:var(--grey)">All writing →</a></p>
+    </section>
+  )}
+
+  <!-- ─── About ─── -->
+  <section id="about" class="wrap">
+    <div class="head">
+      <span class="no">04</span>
+      <h2>About</h2>
+    </div>
+    <div class="about">
+      <span class="no"></span>
+      <div class="body">
+        <!-- [EDIT] your story -->
+        <p><strong>I'm a product builder.</strong> I start from how something should feel,
+        then use whatever it takes — design, AI, code — to make that feeling real and shippable.</p>
+        <p>I believe the best products disappear. They don't demand attention; they earn trust.
+        They're honest about what they are, restrained in what they ask, and thorough in the
+        details you only notice when they're missing.</p>
+        <p>I'm building toward a body of work that speaks for itself — products people don't just
+        use, but quietly love.</p>
+      </div>
+    </div>
+  </section>
+
+</Base>

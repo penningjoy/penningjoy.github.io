@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<Base title="Writing — Joydeep Banerjee" description="Notes on building beautiful, lovable products.">
+  <section class="wrap">
+    <div class="head">
+      <span class="no">—</span>
+      <h2>Writing</h2>
+    </div>
+
+    {posts.length === 0 ? (
+      <p class="lede" style="margin-top:0">Nothing published yet. Soon.</p>
+    ) : (
+      <div class="work">
+        {posts.map((post) => (
+          <a class="item" href={`/writing/${post.id}`}>
+            <span class="idx">→</span>
+            <div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </div>
+            <span class="year">{fmt(post.data.date)}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</Base>
